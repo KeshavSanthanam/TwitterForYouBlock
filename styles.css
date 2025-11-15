@@ -1,0 +1,26 @@
+/* Twitter Following Only - Hide For You tab from timeline switcher */
+
+/* Hide "For You" tab by aria-label in the timeline tab switcher */
+div[role="tablist"] a[aria-label*="For you"],
+div[role="tablist"] a[aria-label*="For You"],
+nav[aria-label*="Timeline"] a[aria-label*="For you"],
+nav[aria-label*="Timeline"] a[aria-label*="For You"] {
+  display: none !important;
+}
+
+/* Hide the first tab in the timeline tabs if it contains "For you" text */
+div[role="tablist"] > div:first-child:has(a[aria-label*="For you"]) {
+  display: none !important;
+}
+
+/* Alternative: Hide first tab element that contains For You */
+div[role="tablist"] a[role="tab"]:first-of-type {
+  display: none !important;
+}
+
+/* Make the Following tab visible and accessible */
+div[role="tablist"] a[aria-label*="Following"],
+nav[aria-label*="Timeline"] a[aria-label*="Following"] {
+  display: flex !important;
+  visibility: visible !important;
+}
